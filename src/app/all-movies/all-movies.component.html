@@ -1,0 +1,30 @@
+
+<div class="container"> 
+<div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+    <table class="table dataTable my-0" id="dataTable">
+        <thead>
+            <tr>
+                <th>Movie Name</th>
+                <th>Starcasting</th>
+                <th>Realese Date</th>
+                <th>Price of ticket</th>
+                <th style="width: 25%; color: black;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movie of movies | async">
+
+                <td>{{movie.moviename}}</td>
+                <td>{{movie.starcast}}</td>
+                <td>{{movie.realesedate}}</td>
+
+                <td>{{movie.price}}</td>
+                <td><button (click)="deleteMovies(movie.id)" class="btn btn-danger">Delete</button>
+                    <button (click)="editMovies(movie.id)" class="btn btn-secondary" style="margin-left: 5px">Update</button>
+                    <button (click)="movieDetails(movie.id)" class="btn btn-info" style="margin-left: 5px">Details</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

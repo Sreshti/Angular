@@ -1,0 +1,51 @@
+<body>
+<nav id="nav" class="navbar navbar-expand-sm navbar-dark bg-dark ">
+    <!-- Links -->
+    <img [src]="imagePath" height="70px" class="navbar-brand"/>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a *ngIf="loginService.isUserLoggedIn()" routerLink="/allmovie" class="nav-link" routerLinkActive="active">All Movie</a>
+        </li>
+        <li class="nav-item">
+            <a *ngIf="loginService.isUserLoggedIn()" routerLink="/addMovies" class="nav-link" routerLinkActive="active">Add Movie</a>
+        </li>
+        <li class="nav-item">
+            <a *ngIf="loginService.isUserLoggedIn()" routerLink="/user" class="nav-link" routerLinkActive="active">View All Users</a>
+        </li>
+
+        <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/cancelTicket" class="nav-link">Cancel Movie Request </a></li>
+        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a></li>
+        <!-- <ul>cancelTicket
+            Routing to diff compnent
+        <li><a routerLink="/User">User-detail</a></li>
+        <li><a routerLink="/addMovie">Update-Movie</a></li>
+        <li><a routerLink="/Logout">Logout</a></li>
+ -->
+    </ul></div>
+    </nav>
+
+     <div class= bgImage>
+     
+      <h2 class="text-white text-center pt-4 h1">{{title}}</h2>
+     <router-outlet></router-outlet>
+    
+ 
+     </div>
+     <footer class=" pt-1 pb-1 text-muted text-center text-small bg-dark">
+        <p class="mb-1"> Online Movie Booking System[HHS]</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </body>
+
+
+

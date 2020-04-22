@@ -1,0 +1,9 @@
+
+.bgImage{
+  background-image:url('/assets/images/backimg.jpg');
+  height:900px;
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+
+}

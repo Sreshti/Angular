@@ -1,0 +1,21 @@
+<div class="container">
+<div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+    <table class="table dataTable my-0" id="dataTable">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customers | async">
+
+                <td>{{customer.firstname}}</td>
+                <td>{{customer.email}}</td>
+                <td><button (click)="deleteCustomer(customer.id)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

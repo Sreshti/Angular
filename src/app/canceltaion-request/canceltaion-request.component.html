@@ -1,0 +1,36 @@
+<div class="container">
+<div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+    <table class="table dataTable my-0" id="dataTable">
+        <thead>
+            <tr>
+                <th>Booked Movie</th>
+                <th>Booked User</th>
+                <th>Booking Date</th>
+                <th>Payment Paid</th>
+                <th style="width: 25%;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of booklist | async">
+
+                <td>{{book.movies.moviename}}</td>
+                <td>{{book.customer.firstname}}</td>
+                <td>{{book.bookingDate}}</td>
+                <td>{{book.price_movie}}</td>
+                <td *ngIf="book.paymentstatus==0" style="background-color: #ffcc80">
+                    <Button id="book.booking_id" class="btn btn-warning" (click)="onSubmit(book)" style="width:100% ;">Request For Cancelation</Button> </td>
+                <td *ngIf="book.paymentstatus==1" style="background-color: #4dff88">
+                    <Button id="book.booking_id" style="width:100% ;" class="btn btn-success">Booked</Button>
+                </td>
+                <td *ngIf="book.paymentstatus==2" style="background-color: #ff8080">
+                    <Button id="book.booking_id" style="width:100% ;" disabled class="btn btn-danger">cancel</Button>
+                </td>
+                <!-- <td><button (click)="deleteMovies(movie.id)" class="btn btn-danger">Delete</button>
+                    <button (click)="editMovies(movie.id)" class="btn btn-secondary" style="margin-left: 5px">Update</button>
+                    <button (click)="movieDetails(movie.id)" class="btn btn-info" style="margin-left: 5px">Details</button>
+                </td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

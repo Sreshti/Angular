@@ -1,0 +1,29 @@
+<h2>
+    Movie Details</h2>
+
+<hr/>
+<div *ngIf="movie">
+    <div>
+        <label><b>Movie Name: </b></label> {{movie.moviename}}
+    </div>
+    <div>
+        <label><b>Star Cast: </b></label>{{movie.starcast}}
+    </div>
+    <div>
+        <label><b>Ticket Price: </b></label> {{movie.price}}
+    </div>
+    <div>
+        <label><b>Description : </b></label> {{ movie.description }}
+    </div>
+    <div>
+        <label><b>Realse Date  </b></label> {{movie.realesedate}}
+    </div>
+    <div>
+        <label><b>End Date  </b></label> {{movie.enddate}}
+    </div>
+
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Product List</button><br>
