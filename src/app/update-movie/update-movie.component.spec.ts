@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { UpdateMovieComponent } from './update-movie.component';
 
@@ -8,7 +10,8 @@ describe('UpdateMovieComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UpdateMovieComponent ]
+      declarations: [ UpdateMovieComponent ], 
+      imports: [HttpClientTestingModule,RouterTestingModule],
     })
     .compileComponents();
   }));

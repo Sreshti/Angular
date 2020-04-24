@@ -13,4 +13,6 @@ export class AppComponent {
   title = 'Movie-Booking-System Admin Panal';
   imagePath='/assets/images/cine4.png';
   admin = true;
+  
 }
+

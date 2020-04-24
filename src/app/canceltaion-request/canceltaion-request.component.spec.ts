@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { CanceltaionRequestComponent } from './canceltaion-request.component';
 
 describe('CanceltaionRequestComponent', () => {
@@ -8,7 +9,8 @@ describe('CanceltaionRequestComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CanceltaionRequestComponent ]
+      declarations: [ CanceltaionRequestComponent ],
+       imports: [HttpClientTestingModule,RouterTestingModule],
     })
     .compileComponents();
   }));
